@@ -9,6 +9,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserComponent } from './components/user/user.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
     LoginComponent,
     SignupComponent,
     UserComponent,
-    InicioComponent
+    InicioComponent,
+    ProductsComponent,
+    ClientsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
