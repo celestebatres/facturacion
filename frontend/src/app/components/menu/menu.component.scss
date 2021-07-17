@@ -9,8 +9,8 @@ body {
 }
 
 img{
-  margin-left: 80px;
-  padding: 15px;
+  width: 70px;
+  height: 70px;
 }
 
 nav {
@@ -18,53 +18,23 @@ nav {
   width: 100%;
   height: 5rem;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-nav ul {
-  float: left;
+
+nav .logo{
   display: flex;
+  flex-direction: row;
 }
 
-nav ul li {
-  float: left;
-  list-style: none;
-  position: relative;
+nav .buts .btn{
+  margin: 10px;
+  padding: 10px;
+  width: 150px;
 }
 
-nav h3 {
+nav h1 {
   padding: 1rem 2rem;
   float: left;
   align-self: center;
-}
-
-nav ul li a {
-  display: block;
-  padding: 0rem 2rem;
-  line-height: 5rem;
-  color: #0a0a0a;
-  text-decoration: none;
-}
-
-nav ul li ul {
-  display: none;
-  position: absolute;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-}
-
-nav ul li:hover ul {
-  display: block;
-}
-
-nav ul li ul li  {
-  width: 100%;
-}
-
-nav ul li ul li a {
-  padding: 1rem 2rem;
-  line-height: unset;
-  white-space: nowrap;
-}
-
-nav ul li ul li a:hover {
-  background-color: #efefef;
 }
