@@ -1,6 +1,19 @@
 <!-- CDN de estilos para los iconos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
+<div id="contenedor-producto" class="m-1">
+    <!-- /*
+    * NgContainer se utilizará junto con la flag para no renderizar
+    * un elemento div, por ejemplo, al vicio
+    */ -->
+     <ng-container *ngIf="showDeleteIcon">
+         <img src="../../../assets/img/logo.png" alt="">
+     </ng-container>
+ </div>
+
+
 <!-- Estilo DropDown Icon -->
 <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <nav>>

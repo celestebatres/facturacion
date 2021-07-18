@@ -12,6 +12,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
