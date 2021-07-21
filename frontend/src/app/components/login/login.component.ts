@@ -1,13 +1,12 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output} from '@angular/core';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit { 
+export class LoginComponent implements OnInit {
 
   constructor(private router:Router) { 
   }
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
-  ingresar(){
+  ingresar():void{
     this.router.navigateByUrl('/user');
   }
 }

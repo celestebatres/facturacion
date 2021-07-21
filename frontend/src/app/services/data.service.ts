@@ -4,10 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  showInicioButton : boolean;
-  showLoginButton : boolean = true;
+  showUser : boolean = false;
 
   constructor() {
-    this.showInicioButton = true;
    }
 }

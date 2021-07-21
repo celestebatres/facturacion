@@ -8,14 +8,10 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
   
   constructor(private router:Router, public dataService: DataService) { 
+  
   }
-  showInicio: boolean = true;
-  showLogin: boolean = true;
-  userProfile: boolean = false;
-  chaps: boolean = false;
   ngOnInit(): void {
     
   }

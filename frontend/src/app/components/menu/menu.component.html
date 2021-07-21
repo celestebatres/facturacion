@@ -10,18 +10,4 @@
     <img src="../../../assets/img/logo1.jpg" alt="">
     <h1>Farmacia</h1>
   </div>
-  <div class="buts">
-    <ng-container *ngIf="showInicio">
-      <button type="button" class="btn btn-dark" (click)="redirectTo('/inicio')">INICIO</button>
-    </ng-container>
-    <ng-container *ngIf="showLogin">
-      <button type="button" class="btn btn-dark" (click)="redirectTo('/login')">LOG IN</button>
-    </ng-container>
-    <ng-container *ngIf="chaps">
-      <button type="button" id= "chaps" class="btn"></button>
-    </ng-container>
-    <ng-container *ngIf="userProfile">
-      <button type="button" class="btn btn-dark">USUARIO</button>
-    </ng-container>
-  </div>
 </nav>
