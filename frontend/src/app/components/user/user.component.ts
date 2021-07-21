@@ -19,4 +19,7 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
+  logout(){
+    this.redirectTo('/login');
+  }
 }

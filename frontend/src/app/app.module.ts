@@ -13,6 +13,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { DataService } from './services/data.service';
+import { FacturasComponent } from './components/facturas/facturas.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DataService } from './services/data.service';
     InicioComponent,
     ProductsComponent,
     ClientsComponent,
-    SettingsComponent
+    SettingsComponent,
+    FacturasComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
