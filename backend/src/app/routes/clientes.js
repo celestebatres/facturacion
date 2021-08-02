@@ -9,23 +9,25 @@ module.exports = (app) => {
             if(err){
                 res.status(500).json({status: 0, mensaje: "Error"});
             } else {
-                res.json({status: 1, mensaje: "Exitoso", clientes: rows})
+                res.json({status: 10, mensaje: "Exitoso", clientes: rows})
             }
         });
     });
 
     //POST
-    app.post('/cliente/:id', (req, res, next) => {
-        let consulta = "UPDATE clientes SET nombre '" + req.body.nombre + "', nit = '" + req.body.nit + "' WHERE id_cliente = " + req.params.id;
-        
-        conn.query(consulta, (err, rows, cols) => {
+    app.post('/cliente', (req, res, next)=> {
+
+        //INSERT INTO farmacia.clientes (nombre, nit) VALUES ("Pedro", 0909)
+        let consulta = "INSERT INTO clientes (nombre, nit) VALUES ( '" + req.body.name+ "','" + req.body.nit + "')"; 
+        conn.query(consulta, (err, rows, cols) =>{
             if(err){
-                res.status(500).json({status: 0, mensaje = "Error"});
+                res.status(500).json({status: 0, mensaje: "Error"});
             } else {
-                res.json({mensaje: "Exitoso"});
+                res.json({status: 1, mensaje: "Exitoso"})
             }
         });
     });
+
 
     //PUT
 
