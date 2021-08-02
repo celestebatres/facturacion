@@ -15,10 +15,8 @@ module.exports = (app) => {
     });
 
     //POST
-    app.post('/cliente', (req, res, next)=> {
-
-        //INSERT INTO farmacia.clientes (nombre, nit) VALUES ("Pedro", 0909)
-        let consulta = "INSERT INTO clientes (nombre, nit) VALUES ( '" + req.body.name+ "','" + req.body.nit + "')"; 
+    app.post('/clientes', (req, res, next)=> {
+        let consulta = "INSERT INTO clientes (nombre, nit) VALUES ( '" + req.body.nombre+ "','" + req.body.nit + "')"; 
         conn.query(consulta, (err, rows, cols) =>{
             if(err){
                 res.status(500).json({status: 0, mensaje: "Error"});
@@ -28,8 +26,28 @@ module.exports = (app) => {
         });
     });
 
-
     //PUT
+    app.put('/clientes/:id', (req, res, next)=>{
+        let consulta = "UPDATE clientes SET nombre = '" + req.body.nombre + "', nit = '" + req.body.nit + "'WHERE id_cliente = " + req.params.id;
+        
+        conn.query(consulta, (err, rows, cols) => {
+            if(err){
+                res.status(500).json({status: 0, mensaje: "Error"});
+            }else{
+                res.json({mensaje: "Exitoso"});
+            }
+        });
+    });
 
     //DELETE
+    app.delete('/clientes/:id', (req, res, next) =>{
+        let consulta = "DELETE FROM clientes WHERE id_cliente = "+ req.params.id;
+        conn.query(consulta, (err, rows, cols) => {
+            if(err){
+                res.status(500).json({status: 0, mensaje: "Error"});
+            } else{
+                res.json({mensaje: "Exitoso"});
+            }
+        });
+    });
 }
