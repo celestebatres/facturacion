@@ -26,7 +26,7 @@ module.exports = (app) => {
         });
     });
 
-    //PUT
+    //PUT //Update
     app.put('/clientes/:id', (req, res, next)=>{
         let consulta = "UPDATE clientes SET nombre = '" + req.body.nombre + "', nit = '" + req.body.nit + "'WHERE id_cliente = " + req.params.id;
         

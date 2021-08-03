@@ -12,7 +12,6 @@ import { UserComponent } from './components/user/user.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { DataService } from './services/data.service';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
@@ -34,7 +33,6 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
