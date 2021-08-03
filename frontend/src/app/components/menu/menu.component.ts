@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class MenuComponent implements OnInit {
   
-  constructor(private router:Router, public dataService: DataService) { 
+  constructor(private router:Router) { 
   
   }
   ngOnInit(): void {

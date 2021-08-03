@@ -9,7 +9,6 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class UserComponent implements OnInit {
   constructor(private dataService : DataService, private router: Router) {
-    this.dataService.showUser = true;
   }
 
   ngOnInit(): void {
