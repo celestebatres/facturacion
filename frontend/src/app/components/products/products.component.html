@@ -20,6 +20,8 @@
       </div>
     </form>
   </div>
+
+  
   <nav class="navbar sticky-top navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand">Inventario de Productos</a>
@@ -30,15 +32,15 @@
     <button class="btn btn-outline-success" type="submit">Buscar</button>
   </form>
 
-    <table class="tabla">
+    <table *ngFor = "let producto of productList" class="tabla">
       <tr><th>CODIGO</th><th>NOMBRE</th><th>PRECIO</th><th>GRAMOS</th><th>EXISTENCIA</th><th>VENCE</th></tr>
       <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{producto.id_producto}}</td>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.precio}}</td>
+          <td>{{producto.grms}}</td>
+          <td>{{producto.existencia}}</td>
+          <td>{{producto.fecha_venc}}</td>
           <td><button>EDITAR</button></td>
           <td><button>ELIMINAR</button></td>
       </tr>

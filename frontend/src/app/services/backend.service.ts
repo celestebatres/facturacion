@@ -10,9 +10,11 @@ import { DeleteComicResponse } from '../models/comics/DeleteComicResponse';
 import { ComicItem } from '../models/comics/ComicItem';
 import { PutComicResponse } from '../models/comics/PutComicResponse';
 import { PutComic } from '../models/comics/PutComic';
+import { ProductList } from '../models/productos/ProductList';
 
 
 const BE_API = environment.urlBackend;
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -20,14 +22,46 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class BackendService {
 
   constructor(private http: HttpClient) { }
 
-  getComics(){
-    let url: string = BE_API + '/comic';
-    return this.http.get<ComicList>(url, httpOptions);
-  }
+
+  //Productos
+
+    //get
+    getProducts(){
+      let url: string = BE_API + '/productos';
+      return this.http.get<ProductList>(url, httpOptions);
+    }
+    
+    //post
+    //put
+    //delete
+
+  //Usuarios
+    //get
+    //post
+    //put
+    //delete
+
+  //Facturas
+    //get
+    //post
+    //put
+    //delete
+
+  //Proveedores
+    //get
+    //post
+    //put
+    //delete
+
+    getComics(){
+      let url: string = BE_API + '/comic';
+      return this.http.get<ComicList>(url, httpOptions);
+    }
 
   insertaComic(nombre: string, anio_impresion:number, sinopsis:string, editorial:string){
     let url:string = BE_API + '/comic';

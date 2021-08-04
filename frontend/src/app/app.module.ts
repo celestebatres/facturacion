@@ -13,6 +13,8 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })
