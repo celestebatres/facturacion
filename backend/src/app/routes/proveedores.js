@@ -28,7 +28,7 @@ module.exports = (app) => {
 
     //PUT
     app.put('/proveedores/:id', (req, res, next)=>{
-        let consulta = "UPDATE proveedores SET nombre = '" + req.body.nombre + "', laboratorio = '" + req.body.laboratorio + "'WHERE id_cliente = " + req.params.id;
+        let consulta = "UPDATE proveedores SET nombre = '" + req.body.nombre + "', laboratorio = '" + req.body.laboratorio + "'WHERE id_proveedor = " + req.params.id;
         
         conn.query(consulta, (err, rows, cols) => {
             if(err){
