@@ -11,6 +11,8 @@ import { ComicItem } from '../models/comics/ComicItem';
 import { PutComicResponse } from '../models/comics/PutComicResponse';
 import { PutComic } from '../models/comics/PutComic';
 import { ProductList } from '../models/productos/ProductList';
+import { SaveProduct } from '../models/productos/SaveProduct';
+import { SaveProductResponse } from '../models/productos/SaveProductResponse';
 
 
 const BE_API = environment.urlBackend;
@@ -37,6 +39,11 @@ export class BackendService {
     }
     
     //post
+    insertaProduct(id_producto: number, nombre: string, precio:number, grms:number, existencia: number, fecha_venc: string){
+      let url:string = BE_API + '/productos';
+      let producto : SaveProduct = new SaveProduct(id_producto, nombre, precio, grms, existencia, fecha_venc);
+      return this.http.post<SaveProductResponse>(url, producto, httpOptions);
+    }
     //put
     //delete
 
