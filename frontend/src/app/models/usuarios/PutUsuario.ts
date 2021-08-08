@@ -1,4 +1,4 @@
-export class SaveUsuario {
+export class PutUsuario {
     nombre: string;
     username: string;
     contrasena: string;

@@ -1,4 +1,60 @@
 <app-user></app-user>
 <div class="dashboard">
+
+    <div class="registrar">
+        <nav class="navbar sticky-top navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand">Nuevo Producto</a>
+          </div>
+        </nav>
+    
+        <form [formGroup]="formG">
+          <div class="crear">
+            <input class="form-control me-2" type="search" formControlName="id_producto" placeholder="Código">
+            <input class="form-control me-2" type="search" formControlName="nombre" placeholder="Nombre">
+            <input class="form-control me-2" type="search" formControlName="precio" placeholder="Precio">
+            <input class="form-control me-2" type="search" formControlName="grms" placeholder="Gramos">
+            <input class="form-control me-2" type="search" formControlName="existencia" placeholder="Existencia">
+            <input class="form-control me-2" type="search" formControlName="fecha_venc" placeholder="Vence">
+            <button type="button" class="btn btn-secondary" (click) = "guardar()">Guardar</button>
+          </div>
+        </form>
+      </div>
+    
+      
+      <nav class="navbar sticky-top navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Inventario de Productos</a>
+        </div>
+      </nav>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+       
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">GRAMOS</th>
+            <th scope="col">EXISTENCIA</th>
+            <th scope="col">FECHA DE VENCIMIENTO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let producto of productList">
+            <td>{{producto.id_producto}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.grms}}</td>
+            <td>{{producto.existencia}}</td>
+            <td>{{producto.fecha_venc}}</td>
+            <td><button>EDITAR</button></td>
+            <td><button (click)="eliminar(producto)">ELIMINAR</button></td>
+        </tr>
+        </tbody>
+      </table>
     
 </div>

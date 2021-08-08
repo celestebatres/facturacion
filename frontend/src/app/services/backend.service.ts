@@ -7,6 +7,13 @@ import { SaveProductResponse } from '../models/productos/SaveProductResponse';
 import { PutProduct } from '../models/productos/PutProduct';
 import { PutProductResponse } from '../models/productos/PutProductResponse';
 import { DeleteProductResponse } from '../models/productos/DeleteProductResponse';
+import { UsuarioList } from '../models/usuarios/UsuarioList';
+import { SaveUsuario } from '../models/usuarios/SaveUsuario';
+import { SaveUsuarioResponse } from '../models/usuarios/SaveUsuarioResponse';
+import { PutUsuario } from '../models/usuarios/PutUsuario';
+import { PutProveedorResponse } from '../models/proveedores/PutProveedorResponse';
+import { PutUsuarioResponse } from '../models/usuarios/PutUsuarioResponse';
+import { DeleteUsuarioResponse } from '../models/usuarios/DeleteUsuarioResponse';
 
 
 const BE_API = environment.urlBackend;
@@ -52,22 +59,62 @@ export class BackendService {
     }
 
   //Usuarios
+
     //get
+    getUsuarios(){
+      let url: string = BE_API + '/usuarios';
+      return this.http.get<UsuarioList>(url, httpOptions);
+    }
+    
     //post
+    insertaUsuario(nombre: string, username: string, contrasena: string, fecha_nac: string, rol: string){
+      let url:string = BE_API + '/usuarios';
+      let usuario: SaveUsuario = new SaveUsuario(nombre, username, contrasena, fecha_nac, rol)
+
+      return this.http.post<SaveUsuarioResponse>(url, usuario, httpOptions);
+    }
     //put
+    editaUsuario(id_usuario: number, nombre: string, username: string, contrasena: string, fecha_nac: string, rol: string){
+      let url:string = BE_API + '/usuarios/' + id_usuario;
+      let usuario: PutUsuario = new PutUsuario(nombre, username, contrasena, fecha_nac, rol);
+      return this.http.put<PutUsuarioResponse>(url, usuario, httpOptions);
+    }
+
     //delete
+    eliminaUsuario(id_usuario: number){
+      let url:string = BE_API + '/usuarios/' + id_usuario;
+      return this.http.delete<DeleteUsuarioResponse >(url, httpOptions);
+    }
 
   //Facturas
     //get
+    getFacturas(){
+      let url: string = BE_API + '/usuarios';
+      return this.http.get<UsuarioList>(url, httpOptions);
+    }
+    
     //post
+    insertaFactura(nombre: string, username: string, contrasena: string, fecha_nac: string, rol: string){
+      let url:string = BE_API + '/usuarios';
+      let usuario: SaveUsuario = new SaveUsuario(nombre, username, contrasena, fecha_nac, rol)
+
+      return this.http.post<SaveUsuarioResponse>(url, usuario, httpOptions);
+    }
     //put
+    editaFactura(id_usuario: number, nombre: string, username: string, contrasena: string, fecha_nac: string, rol: string){
+      let url:string = BE_API + '/usuarios/' + id_usuario;
+      let usuario: PutUsuario = new PutUsuario(nombre, username, contrasena, fecha_nac, rol);
+      return this.http.put<PutUsuarioResponse>(url, usuario, httpOptions);
+    }
+
     //delete
+    eliminaFactura(id_usuario: number){
+      let url:string = BE_API + '/usuarios/' + id_usuario;
+      return this.http.delete<DeleteUsuarioResponse >(url, httpOptions);
+    }
 
   //Proveedores
-    //get
-    //post
-    //put
-    //delete
+    
 
     
 }

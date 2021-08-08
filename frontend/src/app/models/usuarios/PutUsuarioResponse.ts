@@ -1,4 +1,4 @@
-export class DeleteClientResponse{
+export class PutUsuarioResponse{
     mensaje: string;
     status: number;
 

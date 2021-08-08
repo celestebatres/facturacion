@@ -1,15 +1,9 @@
 export class PutClient{
     nombre:string;
-    precio:number;
-    grms:number;
-    existencia:number;
-    fecha_venc: string;
+    nit:number;
 
-    constructor(nombre: string, precio: number, grms: number, existencia: number, fecha_venc: string){
+    constructor(nombre: string, nit:number){
         this.nombre = nombre;
-        this.precio = precio;
-        this.grms = grms;
-        this.existencia = existencia;
-        this.fecha_venc = fecha_venc;
+        this.nit = nit;
     }
 }
