@@ -1,4 +1,4 @@
-export class PutComicResponse{
+export class DeleteProductResponse{
     mensaje: string;
     status: number;
 

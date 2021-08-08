@@ -8,15 +8,15 @@
       </div>
     </nav>
 
-    <form>
+    <form [formGroup]="formG">
       <div class="crear">
-        <input class="form-control me-2" type="search" placeholder="Código">
-        <input class="form-control me-2" type="search" placeholder="Nombre">
-        <input class="form-control me-2" type="search" placeholder="Precio">
-        <input class="form-control me-2" type="search" placeholder="Grms">
-        <input class="form-control me-2" type="search" placeholder="Existencia">
-        <input class="form-control me-2" type="search" placeholder="Vence">
-        <button type="button" class="btn btn-secondary">Guardar</button>
+        <input class="form-control me-2" type="search" formControlName="id_producto" placeholder="Código">
+        <input class="form-control me-2" type="search" formControlName="nombre" placeholder="Nombre">
+        <input class="form-control me-2" type="search" formControlName="precio" placeholder="Precio">
+        <input class="form-control me-2" type="search" formControlName="grms" placeholder="Gramos">
+        <input class="form-control me-2" type="search" formControlName="existencia" placeholder="Existencia">
+        <input class="form-control me-2" type="search" formControlName="fecha_venc" placeholder="Vence">
+        <button type="button" class="btn btn-secondary" (click) = "guardar()">Guardar</button>
       </div>
     </form>
   </div>
@@ -32,11 +32,10 @@
     <button class="btn btn-outline-success" type="submit">Buscar</button>
   </form>
    
-  <table class="table" *ngFor = "let producto of productList">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">CODIGO</th>
         <th scope="col">NOMBRE</th>
         <th scope="col">PRECIO</th>
         <th scope="col">GRAMOS</th>
@@ -45,7 +44,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor = "let producto of productList">
         <td>{{producto.id_producto}}</td>
         <td>{{producto.nombre}}</td>
         <td>{{producto.precio}}</td>
@@ -53,7 +52,7 @@
         <td>{{producto.existencia}}</td>
         <td>{{producto.fecha_venc}}</td>
         <td><button>EDITAR</button></td>
-        <td><button>ELIMINAR</button></td>
+        <td><button (click)="eliminar(producto)">ELIMINAR</button></td>
     </tr>
     </tbody>
   </table>

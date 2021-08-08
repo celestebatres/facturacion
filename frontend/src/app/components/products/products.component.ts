@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductItem } from 'src/app/models/productos/ProductItem';
 import { BackendService } from 'src/app/services/backend.service';
 
@@ -16,7 +17,7 @@ export class ProductsComponent implements OnInit {
   //Para el POST
   formG: FormGroup;
 
-  constructor(private backendService: BackendService, private formBuilder:FormBuilder) { 
+  constructor(private backendService: BackendService, private formBuilder:FormBuilder, private router:Router) { 
     this.productList = [];
 
     this.formG = this.formBuilder.group({
@@ -40,6 +41,18 @@ export class ProductsComponent implements OnInit {
   //Guarda el nuevo registro en la base de datos >>POST<<
   guardar(){
     this.backendService.insertaProduct( this.formG.controls["id_producto"].value, this.formG.controls["nombre"].value, this.formG.controls["precio"].value, this.formG.controls["grms"].value, this.formG.controls["existencia"].value, this.formG.controls["fecha_venc"].value).subscribe(x => alert(x.mensaje));
+    window.location.reload();
+  }
+
+  editar(producto:ProductItem){
+
+  }
+
+  eliminar(producto:ProductItem){
+      this.backendService.eliminaProduct(producto.id_producto).subscribe(x=>{
+        alert(x.mensaje);
+      });
+      window.location.reload();
   }
 
 }
