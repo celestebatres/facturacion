@@ -31,18 +31,30 @@
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Buscar</button>
   </form>
-
-    <table *ngFor = "let producto of productList" class="tabla">
-      <tr><th>CODIGO</th><th>NOMBRE</th><th>PRECIO</th><th>GRAMOS</th><th>EXISTENCIA</th><th>VENCE</th></tr>
+   
+  <table class="table" *ngFor = "let producto of productList">
+    <thead>
       <tr>
-          <td>{{producto.id_producto}}</td>
-          <td>{{producto.nombre}}</td>
-          <td>{{producto.precio}}</td>
-          <td>{{producto.grms}}</td>
-          <td>{{producto.existencia}}</td>
-          <td>{{producto.fecha_venc}}</td>
-          <td><button>EDITAR</button></td>
-          <td><button>ELIMINAR</button></td>
+        <th scope="col">#</th>
+        <th scope="col">CODIGO</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">PRECIO</th>
+        <th scope="col">GRAMOS</th>
+        <th scope="col">EXISTENCIA</th>
+        <th scope="col">FECHA DE VENCIMIENTO</th>
       </tr>
-    </table>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{producto.id_producto}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.grms}}</td>
+        <td>{{producto.existencia}}</td>
+        <td>{{producto.fecha_venc}}</td>
+        <td><button>EDITAR</button></td>
+        <td><button>ELIMINAR</button></td>
+    </tr>
+    </tbody>
+  </table>
 </div>
