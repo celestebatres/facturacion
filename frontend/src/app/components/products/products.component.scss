@@ -1,23 +1,8 @@
 .crear {
     display: flex;
     flex-direction: row;
-}
+}  
 
-.contenido{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    border-radius: 3%;
-    width: 700px;
-    height: 340px;
-    padding: 5% 10% 5% 10%;
-}
-
-.tabla{
+.table{
     margin: 30px 0px 0px 30px
 }

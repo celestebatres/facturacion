@@ -1,4 +1,4 @@
-export class SaveProduct{
+export class SaveProveedor{
     nombre:string;
     laboratorio:string;
 

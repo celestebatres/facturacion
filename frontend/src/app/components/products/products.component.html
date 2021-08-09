@@ -10,13 +10,13 @@
 
     <form [formGroup]="formG">
       <div class="crear">
-        <input class="form-control me-2" type="search" formControlName="id_producto" placeholder="Código">
-        <input class="form-control me-2" type="search" formControlName="nombre" placeholder="Nombre">
-        <input class="form-control me-2" type="search" formControlName="precio" placeholder="Precio">
-        <input class="form-control me-2" type="search" formControlName="grms" placeholder="Gramos">
-        <input class="form-control me-2" type="search" formControlName="existencia" placeholder="Existencia">
-        <input class="form-control me-2" type="search" formControlName="fecha_venc" placeholder="Vence">
-        <button type="button" class="btn btn-secondary" (click) = "guardar()">Guardar</button>
+        <input class="form-control me-2" type="search" formControlName="id_producto" placeholder="Código" required>
+        <input class="form-control me-2" type="search" formControlName="nombre" placeholder="Nombre" required>
+        <input class="form-control me-2" type="search" formControlName="precio" placeholder="Precio" required>
+        <input class="form-control me-2" type="search" formControlName="grms" placeholder="Gramos" required>
+        <input class="form-control me-2" type="search" formControlName="existencia" placeholder="Existencia" required>
+        <input class="form-control me-2" type="search" formControlName="fecha_venc" placeholder="Vence" required>
+        <button type="button" class="btn btn-dark" (click) = "guardar()">Guardar</button>
       </div>
     </form>
   </div>
@@ -51,8 +51,8 @@
         <td>{{producto.grms}}</td>
         <td>{{producto.existencia}}</td>
         <td>{{producto.fecha_venc}}</td>
-        <td><button>EDITAR</button></td>
-        <td><button (click)="eliminar(producto)">ELIMINAR</button></td>
+        <td><button class="btn btn-dark">EDITAR</button></td>
+        <td><button class="btn btn-dark" (click)="eliminar(producto)">ELIMINAR</button></td>
     </tr>
     </tbody>
   </table>
