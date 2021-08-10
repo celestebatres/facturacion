@@ -18,13 +18,32 @@ export class ClientsComponent implements OnInit {
     this.clientList = [];
 
     this.formG = this.formBuilder.group({
-      id_cliente: [null],
       nombre: [''],
       nit: [null]
     });
   }
 
   ngOnInit(): void {
+    this.backendService.getClientes().subscribe((x) =>{
+      this.clientList = x.clientes;
+    });
+  }
+
+  guardar(){
+    this.backendService.insertaCliente(this.formG.controls["nombre"].value, this.formG.controls["nit"].value).subscribe(x => alert(x.mensaje));
+  
+    window.location.reload();
+  }
+
+  editar(cliente:ClientItem){
+
+  }
+
+  eliminar(cliente:ClientItem){
+    this.backendService.eliminaCliente(cliente.id_cliente).subscribe(x =>{
+      alert(x.mensaje);
+    });
+      window.location.reload();
   }
 
 }

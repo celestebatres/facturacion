@@ -4,7 +4,7 @@
     <div class="registrar">
       <nav class="navbar sticky-top navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand">Nuevo Producto</a>
+          <a class="navbar-brand">Nuevo Usuario</a>
         </div>
       </nav>
   
@@ -12,7 +12,7 @@
         <div class="crear">
           <input class="form-control me-2" type="search" formControlName="nombre" placeholder="Nombre" required>
           <input class="form-control me-2" type="search" formControlName="username" placeholder="Username" required>
-          <input class="form-control me-2" type="search" formControlName="contrasena" placeholder="Contraseña" required>
+          <input class="form-control me-2" type="password" formControlName="contrasena" placeholder="Contraseña" required>
           <input class="form-control me-2" type="search" formControlName="fecha_nac" placeholder="Nacimiento" required>
           <input class="form-control me-2" type="search" formControlName="rol" placeholder="Rol" required>
           <button type="button" class="btn btn-dark" (click) = "guardar()">Guardar</button>
@@ -23,7 +23,7 @@
     
     <nav class="navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand">Inventario de Productos</a>
+        <a class="navbar-brand">Inventario de Usuarios</a>
       </div>
     </nav>
     <form class="d-flex">

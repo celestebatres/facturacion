@@ -31,7 +31,7 @@ export class UsuariosComponent implements OnInit {
   //Cuando se inicia
   ngOnInit(): void {
     this.backendService.getUsuarios().subscribe((x) =>{
-      this.usuarioList = x.usuario;
+      this.usuarioList = x.usuarios;
     });
     
   }
@@ -40,6 +40,7 @@ export class UsuariosComponent implements OnInit {
   //Guarda el nuevo registro en la base de datos >>POST<<
   guardar(){
     this.backendService.insertaUsuario(this.formG.controls["nombre"].value, this.formG.controls["username"].value, this.formG.controls["contrasena"].value, this.formG.controls["fecha_nac"].value, this.formG.controls["rol"].value).subscribe(x => alert(x.mensaje));
+    window.location.reload();
   }
 
   editar(producto:UsuarioItem){

@@ -16,6 +16,12 @@ import { PutUsuarioResponse } from '../models/usuarios/PutUsuarioResponse';
 import { DeleteUsuarioResponse } from '../models/usuarios/DeleteUsuarioResponse';
 import { ProveedorList } from '../models/proveedores/ProveedorList';
 import { SaveProveedor } from '../models/proveedores/SaveProveedor';
+import { ClientList } from '../models/clientes/ClientList';
+import { SaveClient } from '../models/clientes/SaveClient';
+import { SaveClientResponse } from '../models/clientes/SaveClientRespose';
+import { PutClient } from '../models/clientes/PutClient';
+import { PutClientResponse } from '../models/clientes/PutClientResponse';
+import { DeleteClientResponse } from '../models/clientes/DeleteClientRespose';
 
 
 const BE_API = environment.urlBackend;
@@ -64,7 +70,7 @@ export class BackendService {
 
     //get
     getUsuarios(){
-      let url: string = BE_API + '/usuarios';
+      let url: string = BE_API + '/clientes';
       return this.http.get<UsuarioList>(url, httpOptions);
     }
     
@@ -89,6 +95,31 @@ export class BackendService {
     }
 
   //Clientes
+  //get
+  getClientes(){   
+    let url: string = BE_API + '/clientes';
+    return this.http.get<ClientList>(url, httpOptions);
+  }
+  
+  //post
+  insertaCliente(nombre: string, nit: number){
+    let url:string = BE_API + '/clientes';
+    let cliente: SaveClient = new SaveClient(nombre,nit);
+
+    return this.http.post<SaveClientResponse>(url, cliente, httpOptions);
+  }
+  //put
+  editaCliente(id_cliente: number, nombre: string, nit: number){
+    let url:string = BE_API + '/clientes/' + id_cliente;
+    let cliente: PutClient = new PutClient(nombre, nit);
+    return this.http.put<PutClientResponse>(url, cliente, httpOptions);
+  }
+
+  //delete
+  eliminaCliente(id_cliente: number){
+    let url:string = BE_API + '/clientes/' + id_cliente;
+    return this.http.delete<DeleteClientResponse>(url, httpOptions);
+  }
   
   //Proveedores    
 
