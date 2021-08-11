@@ -15,6 +15,7 @@ import { FacturasComponent } from './components/facturas/facturas.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClientsComponent,
     SettingsComponent,
     FacturasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ProveedoresComponent
   ],
   imports: [
     BrowserModule,

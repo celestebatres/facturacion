@@ -15,7 +15,7 @@ body {
   background-color: #ffffff;
   width: 80%;
   height: 80%;
-  padding: 0% 0% 5% 0%;
+  padding: 5%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -23,4 +23,13 @@ body {
   flex-direction: column;
   justify-content: center;
   border-radius: 3%;
+}
+
+.crear {
+  display: flex;
+  flex-direction: row;
+}
+
+.table{
+  margin-top: 30px;
 }

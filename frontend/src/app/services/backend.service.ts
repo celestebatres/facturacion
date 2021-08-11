@@ -22,6 +22,9 @@ import { SaveClientResponse } from '../models/clientes/SaveClientRespose';
 import { PutClient } from '../models/clientes/PutClient';
 import { PutClientResponse } from '../models/clientes/PutClientResponse';
 import { DeleteClientResponse } from '../models/clientes/DeleteClientRespose';
+import { SaveProveedorResponse } from '../models/proveedores/SaveProveedorResponse';
+import { PutProveedor } from '../models/proveedores/PutProveedor';
+import { DeleteProveedorResponse } from '../models/proveedores/DeleteProveedorResponse';
 
 
 const BE_API = environment.urlBackend;
@@ -70,7 +73,7 @@ export class BackendService {
 
     //get
     getUsuarios(){
-      let url: string = BE_API + '/clientes';
+      let url: string = BE_API + '/usuarios';
       return this.http.get<UsuarioList>(url, httpOptions);
     }
     
@@ -121,7 +124,32 @@ export class BackendService {
     return this.http.delete<DeleteClientResponse>(url, httpOptions);
   }
   
-  //Proveedores    
+  //Proveedores  
+  //get
+  getProveedores(){   
+    let url: string = BE_API + '/proveedores';
+    return this.http.get<ProveedorList>(url, httpOptions);
+  }
+  
+  //post
+  insertaProveedor(nombre: string, laboratorio: string){
+    let url:string = BE_API + '/proveedores';
+    let proveedor: SaveProveedor = new SaveProveedor(nombre, laboratorio);
+    return this.http.post<SaveProveedorResponse>(url, proveedor, httpOptions);
+  }
+  //put
+  editaProveedor(id_proveedor: number, nombre: string, laboratorio: string){
+    let url:string = BE_API + '/proveedores/' + id_proveedor;
+    let proveedor: PutProveedor = new PutProveedor(nombre, laboratorio);
+    return this.http.put<PutProductResponse>(url, proveedor, httpOptions);
+  }
+
+  //delete
+  eliminaProveedor(id_proveedor: number){
+    let url:string = BE_API + '/proveedores/' + id_proveedor;
+    return this.http.delete<DeleteProveedorResponse>(url, httpOptions);
+  }
+  
 
   //Facturas ---------------------Las dejamos para luego
 }

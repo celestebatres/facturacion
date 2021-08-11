@@ -1,0 +1,49 @@
+<app-user></app-user>
+<div class="dashboard">
+
+  <div class="registrar">
+    <nav class="navbar sticky-top navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Nuevo Proveedor</a>
+      </div>
+    </nav>
+
+    <form [formGroup]="formG">
+      <div class="crear">
+        <input class="form-control me-2" type="search" formControlName="nombre" placeholder="Nombre" required>
+        <input class="form-control me-2" type="search" formControlName="laboratorio" placeholder="laboratorio" required>
+        <button type="button" class="btn btn-dark" (click) = "guardar()">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Lista de Proveedores</a>
+    </div>
+  </nav>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+   
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">LABORATORIO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let proveedor of proveedoresList">
+        <td>{{proveedor.id_proveedor}}</td>
+        <td>{{proveedor.nombre}}</td>
+        <td>{{proveedor.laboratorio}}</td>
+        <td><button class="btn btn-dark">EDITAR</button></td>
+        <td><button class="btn btn-dark" (click)="eliminar(proveedor)">ELIMINAR</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -4,6 +4,7 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserComponent } from './components/user/user.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'clients', component:ClientsComponent},
   {path:'usuarios', component:UsuariosComponent},
   {path:'settings', component:SettingsComponent},
+  {path:'proveedores', component:ProveedoresComponent},
   {path:'**', pathMatch: 'full', redirectTo: 'login'}
 ];
 
